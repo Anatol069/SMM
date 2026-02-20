@@ -2,12 +2,29 @@ import React, { useState } from 'react';
 import './MediaLibrary.css';
 
 function MediaLibrary() {
+  // eslint-disable-next-line no-unused-vars
   const [media, setMedia] = useState([
-    { id: 1, type: 'image', title: 'Sunset Photo', url: 'https://via.placeholder.com/200x200?text=Sunset' },
-    { id: 2, type: 'image', title: 'Beach Day', url: 'https://via.placeholder.com/200x200?text=Beach' },
-    { id: 3, type: 'video', title: 'Product Demo', url: 'https://via.placeholder.com/200x200?text=Video' },
+    {
+      id: 1,
+      type: 'image',
+      title: 'Sunset Photo',
+      url: 'https://via.placeholder.com/200x200?text=Sunset',
+    },
+    {
+      id: 2,
+      type: 'image',
+      title: 'Beach Day',
+      url: 'https://via.placeholder.com/200x200?text=Beach',
+    },
+    {
+      id: 3,
+      type: 'video',
+      title: 'Product Demo',
+      url: 'https://via.placeholder.com/200x200?text=Video',
+    },
   ]);
 
+  // eslint-disable-next-line no-unused-vars
   const [draggedFiles, setDraggedFiles] = useState([]);
 
   const handleDrop = (e) => {
@@ -31,11 +48,7 @@ function MediaLibrary() {
         </div>
       </div>
 
-      <div 
-        className="upload-zone"
-        onDrop={handleDrop}
-        onDragOver={handleDragOver}
-      >
+      <div className="upload-zone" onDrop={handleDrop} onDragOver={handleDragOver}>
         <div className="upload-icon">📁</div>
         <h3>Drop Media Here to Upload</h3>
         <p>Then drag media to the Calendar to schedule posts.</p>
@@ -50,7 +63,7 @@ function MediaLibrary() {
       </div>
 
       <div className="media-grid">
-        {media.map(item => (
+        {media.map((item) => (
           <div key={item.id} className="media-item">
             <div className="media-preview">
               <img src={item.url} alt={item.title} />

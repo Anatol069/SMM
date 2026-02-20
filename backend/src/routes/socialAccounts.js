@@ -1,5 +1,9 @@
 const express = require('express');
-const { getAccounts, createAccount, deleteAccount } = require('../controllers/socialAccountController');
+const {
+  getAccounts,
+  createAccount,
+  deleteAccount,
+} = require('../controllers/socialAccountController');
 const authMiddleware = require('../middleware/auth');
 
 const router = express.Router();

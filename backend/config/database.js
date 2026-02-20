@@ -2,10 +2,9 @@ const sql = require('mssql');
 
 const config = {
     user: 'sa',
-    password: 'YourPassword123',
+    password: '123456789',
     server: 'localhost',
     database: 'smm_database',
-    authentication: { type: 'default' },
     options: {
         encrypt: true,
         trustServerCertificate: true,
@@ -21,6 +20,7 @@ async function connectDB() {
         console.log('✅ Connected to SQL Server');
     } catch (err) {
         console.error('❌ DB Error:', err);
+        throw err;
     }
 }
 

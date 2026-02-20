@@ -48,10 +48,7 @@ function Header({ onMenuClick }) {
               >
                 Settings
               </button>
-              <button
-                className="dropdown-item logout"
-                onClick={handleLogout}
-              >
+              <button className="dropdown-item logout" onClick={handleLogout}>
                 Logout
               </button>
             </div>

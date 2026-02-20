@@ -3,6 +3,7 @@ import './Calendar.css';
 
 function Calendar() {
   const [selectedDate, setSelectedDate] = useState(new Date(2026, 1, 20));
+  // eslint-disable-next-line no-unused-vars
   const [posts, setPosts] = useState([]);
   const [showPostForm, setShowPostForm] = useState(false);
 
@@ -28,16 +29,22 @@ function Calendar() {
     for (let i = 1; i <= daysInMonth; i++) {
       const isToday = i === 20 && selectedDate.getMonth() === 1;
       days.push(
-        <div 
-          key={i} 
+        <div
+          key={i}
           className={`calendar-day ${isToday ? 'today' : ''}`}
-          onClick={() => setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), i))}
+          onClick={() =>
+            setSelectedDate(new Date(selectedDate.getFullYear(), selectedDate.getMonth(), i))
+          }
         >
           <div className="day-number">{i}</div>
           <div className="day-posts">
-            {posts.filter(p => p.date === i).map(p => (
-              <div key={p.id} className={`post-badge ${p.platform}`}>{p.platform.slice(0, 2)}</div>
-            ))}
+            {posts
+              .filter((p) => p.date === i)
+              .map((p) => (
+                <div key={p.id} className={`post-badge ${p.platform}`}>
+                  {p.platform.slice(0, 2)}
+                </div>
+              ))}
           </div>
         </div>
       );
@@ -87,7 +94,9 @@ function Calendar() {
             </div>
             <div className="form-actions">
               <button className="btn btn-primary">Schedule</button>
-              <button className="btn btn-secondary" onClick={() => setShowPostForm(false)}>Cancel</button>
+              <button className="btn btn-secondary" onClick={() => setShowPostForm(false)}>
+                Cancel
+              </button>
             </div>
           </div>
         </div>
@@ -95,11 +104,15 @@ function Calendar() {
 
       <div className="calendar-wrapper">
         <div className="calendar-nav">
-          <button onClick={prevMonth} className="btn-nav">←</button>
+          <button onClick={prevMonth} className="btn-nav">
+            ←
+          </button>
           <h3 className="month-year">
             {selectedDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
           </h3>
-          <button onClick={nextMonth} className="btn-nav">→</button>
+          <button onClick={nextMonth} className="btn-nav">
+            →
+          </button>
         </div>
 
         <div className="calendar">
@@ -112,9 +125,7 @@ function Calendar() {
             <div>Fri</div>
             <div>Sat</div>
           </div>
-          <div className="calendar-grid">
-            {renderDays()}
-          </div>
+          <div className="calendar-grid">{renderDays()}</div>
         </div>
       </div>
 

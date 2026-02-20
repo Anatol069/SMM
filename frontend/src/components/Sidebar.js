@@ -28,7 +28,7 @@ function Sidebar() {
 
       <nav className="nav-container">
         <ul className="nav-list">
-          {navItems.map(item => (
+          {navItems.map((item) => (
             <li key={item.path}>
               <Link
                 to={item.path}
@@ -57,7 +57,7 @@ function Sidebar() {
 
       <div className="sidebar-footer">
         <ul className="nav-list">
-          {footerItems.map(item => (
+          {footerItems.map((item) => (
             <li key={item.path}>
               <Link
                 to={item.path}

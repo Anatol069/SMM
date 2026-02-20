@@ -4,22 +4,31 @@
     "description": "Social Media Scheduling App - Frontend",
     "private": true,
     "dependencies": {
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-router-dom": "6.20.0",
         "axios": "1.6.2",
         "date-fns": "2.30.0",
+        "react": "18.2.0",
         "react-big-calendar": "1.8.5",
-        "react-dropzone": "14.2.3"
+        "react-dom": "18.2.0",
+        "react-dropzone": "14.2.3",
+        "react-router-dom": "6.20.0"
     },
     "devDependencies": {
-        "react-scripts": "5.0.1",
-        "tailwindcss": "3.3.6",
+        "@testing-library/jest-dom": "^6.9.1",
+        "@testing-library/react": "^14.3.1",
+        "autoprefixer": "10.4.16",
+        "eslint": "^8.50.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.5.5",
         "postcss": "8.4.31",
-        "autoprefixer": "10.4.16"
+        "prettier": "^3.0.0",
+        "react-scripts": "5.0.1",
+        "tailwindcss": "3.3.6"
     },
     "scripts": {
         "start": "react-scripts start",
+        "lint": "eslint \"src/**/*.{js,jsx}\"",
+        "lint:fix": "eslint \"src/**/*.{js,jsx}\" --fix",
+        "format": "prettier --write \"src/**\"",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
